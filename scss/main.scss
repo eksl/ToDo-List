@@ -1,0 +1,106 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #28477D;
+
+    button {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.main-width {
+    min-width: 400px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    margin: 20px;
+
+    h1 {
+        text-align: center;
+        color: #992665;
+        // Text border
+        text-shadow: -1px 0 #5E173E,
+            0 1px #5E173E,
+            1px 0 #5E173E,
+            0 -1px #5E173E;
+    }
+}
+
+.main-container .main-width {
+    margin: 0 auto;
+    padding-left: 50px;
+    position: relative;
+
+    .add-list-button {
+        margin: 10px;
+        background-color: #BD922E;
+        border: 1px solid #745A1D;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 25px;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .todo-container {
+        margin: 10px;
+        padding: 10px;
+        width: 300px;
+        min-height: 200px;
+        background-color: #BD922E;
+        border-radius: 5px;
+        display: inline-block;
+
+        .todo-container__title {
+            background-color: #BD922E;
+            border: none;
+            font-size: 18px;
+        }
+
+        .todo-container__add-element {
+            border: none;
+            background-color: #BD922E;
+            color: #32270D;
+            font-size: 25px;
+        }
+
+        .todo-container__remove-list {
+            margin-top: 2px;
+            border: none;
+            background-color: #BD922E;
+            color: #32270D;
+            font-size: 20px;
+            float: right;
+        }
+
+        .todo-container__remove-completed {
+            margin-top: 5px;
+            padding: 2px;
+            background-color: #BD922E;
+            color: #745A1D;
+            border: none;
+            font-size: 14px;
+
+            &:hover {
+                border: 1px solid #745A1D;
+                border-radius: 5px;
+                color: #32270D;
+            }
+        }
+    }
+}
+
+.footer {
+    margin: 20px;
+}
