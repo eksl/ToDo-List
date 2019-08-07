@@ -32,6 +32,7 @@ function addNewList() {
     var removeCompletedButton = document.createElement("button");
     removeCompletedButton.innerText = "Remove completed";
     removeCompletedButton.classList.add("todo-container__remove-completed");
+    removeCompletedButton.addEventListener("click", removeAllCompleted);
 
     var newList = document.createElement("ul");
     newList.classList.add("todo-container__list");
@@ -86,7 +87,6 @@ function handleAddListButton() {
 
 // Add list element
 function addListElement() {
-    console.log(this);
     var element = document.createElement("li");
     element.classList.add("todo-container__list-element");
 
@@ -108,6 +108,7 @@ function addListElement() {
     removeButton.classList.add("todo-container__list-element-remove");
     removeButton.innerText = "x";
     element.appendChild(removeButton);
+    removeButton.addEventListener("click", removeElement);
 
     // Add element to document
     this.parentElement.querySelector(".todo-container__list").appendChild(element);
@@ -127,4 +128,18 @@ function markCompleteElement() {
     } else {
         element.classList.add("todo-container__list-element--complete");
     }
+}
+
+// Remove chosen element
+function removeElement() {
+    var element = this.parentElement;
+    element.parentElement.removeChild(element);
+}
+
+// Remove all completed elements
+function removeAllCompleted() {
+    var completedElements = this.parentElement.querySelectorAll(".todo-container__list-element--complete");
+    completedElements.forEach(function (element) {
+        element.parentElement.removeChild(element);
+    });
 }
