@@ -109,6 +109,13 @@
                     border: none;
                     color: #32270D;
                     font-size: 15px;
+                    font-weight: 600;
+                }
+
+                &.todo-container__list-element--complete {
+                    .todo-container__list-element-input {
+                        color: darkgreen;
+                    }
                 }
 
                 .todo-container__list-element-complete {

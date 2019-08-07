@@ -44,11 +44,10 @@ function addNewList() {
 
     container.appendChild(newDiv);
 
-    // Events
+    // Mouse events
 
     var mousePosition;
     var offset = [0, 0];
-    var div;
     var isDown = false;
     newDiv.style.left = "0px";
     newDiv.style.top = "0px";
@@ -102,6 +101,7 @@ function addListElement() {
     completeButton.classList.add("todo-container__list-element-complete");
     completeButton.innerText = "V";
     element.appendChild(completeButton);
+    completeButton.addEventListener("click", markCompleteElement);
 
     // Remove button
     var removeButton = document.createElement("button");
@@ -119,7 +119,12 @@ function removeList() {
     thisDiv.parentElement.removeChild(thisDiv);
 }
 
-// Move list with mouse
-function moveList() {
-
+// Mark as complete
+function markCompleteElement() {
+    var element = this.parentElement;
+    if (element.classList.contains("todo-container__list-element--complete")) {
+        element.classList.remove("todo-container__list-element--complete");
+    } else {
+        element.classList.add("todo-container__list-element--complete");
+    }
 }
